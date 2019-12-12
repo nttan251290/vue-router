@@ -2,20 +2,17 @@
   <div id="app">
     <comp-menu />
     <router-view></router-view>
-    <slider />
   </div>
 </template>
 
 <script>
 
 import CompMenu from './components/CompMenu'
-import Slider from './components/Slider'
 
 export default {
   name: 'app',
   components: {
-    CompMenu,
-    Slider
+    CompMenu
   },
 
   data () {
