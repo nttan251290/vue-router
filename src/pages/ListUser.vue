@@ -11,8 +11,12 @@
       </b-col>
 
       <b-col sm="8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec quam gravida, semper mauris id, dignissim nunc. Praesent vel varius justo, a vehicula risus. Fusce in lectus dolor. Maecenas bibendum ornare ipsum congue sodales. Duis eu tristique ex, eu auctor leo. Nunc eu luctus lorem. Sed dapibus dolor nec tincidunt sagittis. Quisque interdum est viverra, porttitor leo quis, tempus ipsum. Nullam sit amet lorem interdum, scelerisque massa in, feugiat ipsum. Nam eget nulla sit amet quam rhoncus vulputate vel ut mi. Integer mollis est leo, ut accumsan tortor elementum ut. Duis mollis accumsan nisi, et scelerisque dolor convallis ut. Ut diam quam, tempus et ipsum sed, porttitor facilisis ex. Vestibulum suscipit bibendum libero ac eleifend. Nullam dui nunc, varius eget viverra at, ultricies quis magna. Morbi laoreet nunc mauris, eu vehicula nisl imperdiet vitae.</p>
-      </b-col>  
+        <template v-if="getCurrentUser">
+          <p>Tên: {{getCurrentUser.fullName}}</p>
+          <p>Email: {{getCurrentUser.email}}</p>
+          <p>Active: {{getCurrentUser.isActive}}</p>
+        </template>
+      </b-col>
     </b-row>
     
   </b-container>
@@ -26,7 +30,20 @@ export default {
   name: 'list-user',
   data() {
     return {
-      listUser
+      listUser,
+      currentId: null
+    }
+  },
+
+  created() {
+    this.currentId = this.$route.params.id
+  },
+
+  computed: {
+    getCurrentUser() {
+      let id = parseInt(this.currentId)
+      if(id > this.listUser.length) return null
+      return this.listUser[id - 1]
     }
   }
 }
