@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <comp-menu />
-    <slider />
-    <h1>Component App.vue</h1>
     <router-view></router-view>
+    <slider />
   </div>
 </template>
 
@@ -53,4 +52,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>

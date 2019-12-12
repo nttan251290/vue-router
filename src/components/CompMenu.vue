@@ -9,8 +9,8 @@
 
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-              <b-nav-item href="#">Link</b-nav-item>
-              <b-nav-item href="#" disabled>Disabled</b-nav-item>
+              <router-link to="/" tag="b-nav-item" exactActiveClass="active">Go to Home</router-link>
+              <router-link to="/about-us" tag="b-nav-item" exactActiveClass="active">Go to About Us</router-link>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->
