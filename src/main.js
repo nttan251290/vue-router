@@ -5,6 +5,7 @@ import App from './App.vue'
 
 import HomePage from './pages/HomePage'
 import Login from './pages/Login'
+import ListUser from './pages/ListUser'
 
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
@@ -31,6 +32,10 @@ const routes = [
   { 
     path: '/login', 
     component: Login 
+  },
+  { 
+    path: '/user/:id', 
+    component: ListUser 
   }
 ]
 
