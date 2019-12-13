@@ -34,7 +34,7 @@ const routes = [
     component: Login 
   },
   { 
-    path: '/user/:id', 
+    path: '/user/:id?', 
     component: ListUser 
   }
 ]

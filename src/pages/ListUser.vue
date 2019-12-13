@@ -3,19 +3,27 @@
     <b-row>
       <b-col sm="4">
         <b-list-group>
-          <b-list-group-item 
-            v-for="(user, index) in listUser" 
-            v-bind:key="index">{{user.fullName}}
-          </b-list-group-item>
+
+          <router-link
+            v-for="(user, index) in listUser"
+            v-bind:key="index"
+            v-bind:to="`/user/${index + 1}`"
+            tag="b-list-group-item" 
+            exactActiveClass="active">
+            {{user.fullName}}
+          </router-link>
+
         </b-list-group>
       </b-col>
 
       <b-col sm="8">
-        <template v-if="getCurrentUser">
+        <h3 v-if="!currentId">Vui lòng chọn vào một User bất kì</h3>
+        <template v-else-if="getCurrentUser">
           <p>Tên: {{getCurrentUser.fullName}}</p>
           <p>Email: {{getCurrentUser.email}}</p>
           <p>Active: {{getCurrentUser.isActive}}</p>
         </template>
+        <h3 v-else>Id user không hợp lệ</h3>
       </b-col>
     </b-row>
     
@@ -32,6 +40,12 @@ export default {
     return {
       listUser,
       currentId: null
+    }
+  },
+
+  watch: {
+    $route(to, from) {
+      this.currentId = this.$route.params.id
     }
   },
 
