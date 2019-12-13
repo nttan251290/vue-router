@@ -15,6 +15,8 @@ import './plugins'  // Tự động tìm tới file index.js
 
 Vue.use(VueRouter)
 
+let isLogin = true
+
 const routes = [
   { 
     path: '/', 
@@ -36,7 +38,13 @@ const routes = [
   },
   { 
     path: '/user/:id?', 
-    component: ListUser 
+    component: ListUser,
+    beforeEnter: (to, from, next) => {
+      if(isLogin) next();
+      else {
+        next('/login')
+      }
+    }
   },
   { 
     path: '*', 
@@ -47,6 +55,10 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  next()
 })
 
 new Vue({
