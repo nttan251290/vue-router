@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-    <comp-menu />
-    <transition name="slide-fade" mode="out-in">
+    <!-- <comp-menu /> -->
+    <!-- <transition name="slide-fade" mode="out-in">
       <router-view></router-view>
-    </transition>
+    </transition> -->
+    <h1>Hello</h1>
   </div>
 </template>
 
 <script>
 
-import CompMenu from './components/CompMenu'
+// import CompMenu from './components/CompMenu'
 
 export default {
   name: 'app',
   components: {
-    CompMenu
+    // CompMenu
   },
 
   data () {
@@ -71,17 +72,5 @@ a {
   opacity: 0;
   transform: scale(1.1)
 } */
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
 
 </style>
