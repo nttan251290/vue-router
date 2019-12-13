@@ -9,6 +9,7 @@ import ListUser from './pages/ListUser'
 
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
+import NotFound from './pages/NotFound'
 
 import './plugins'  // Tự động tìm tới file index.js
 
@@ -36,6 +37,10 @@ const routes = [
   { 
     path: '/user/:id?', 
     component: ListUser 
+  },
+  { 
+    path: '*', 
+    component: NotFound 
   }
 ]
 
