@@ -1,26 +1,27 @@
 <template>
   <div id="app">
-    <!-- <comp-menu /> -->
-    <!-- <transition name="slide-fade" mode="out-in">
-      <router-view></router-view>
-    </transition> -->
-    <h1>Hello</h1>
+    <navigation />
+    <home-page />
+    <comp-footer />
   </div>
 </template>
 
 <script>
 
-// import CompMenu from './components/CompMenu'
+import Navigation from './components/Navigation'
+import CompFooter from './components/CompFooter'
+import HomePage from './pages/HomePage'
 
 export default {
   name: 'app',
   components: {
-    // CompMenu
+    Navigation,
+    CompFooter,
+    HomePage
   },
 
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
