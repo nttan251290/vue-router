@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navigation />
-    <home-page />
+    <router-view />
     <comp-footer />
   </div>
 </template>
@@ -10,14 +10,12 @@
 
 import Navigation from './components/Navigation'
 import CompFooter from './components/CompFooter'
-import HomePage from './pages/HomePage'
 
 export default {
   name: 'app',
   components: {
     Navigation,
-    CompFooter,
-    HomePage
+    CompFooter
   },
 
   data () {

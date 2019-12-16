@@ -1,6 +1,10 @@
 <template>
   <div>
-    <page-header />
+    <page-header>
+      <span class="meta">Posted by
+        <a href="#">Start Bootstrap 9999</a>
+        on August 24, 2019</span>
+    </page-header>
 
     <!-- Post Content -->
     <article>
