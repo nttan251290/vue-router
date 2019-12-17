@@ -1,6 +1,10 @@
 <template>
   <div>
-    <page-header />
+    <page-header 
+      title="About Me"
+      bg="/dist/img/about-bg.jpg"
+      subHeading="This is what I do."
+    />
 
     <!-- Main Content -->
     <div class="container">
